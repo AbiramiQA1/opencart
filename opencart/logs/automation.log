@@ -1,0 +1,39 @@
+2026-04-16 12:52:02 INFO  AccountRegisterTest:16 - -------AccountTest Started----------
+2026-04-16 12:52:02 INFO  AccountRegisterTest:20 - -------click Account----------
+2026-04-16 12:52:02 INFO  AccountRegisterTest:22 - -------click Register----------
+2026-04-16 12:52:03 INFO  AccountRegisterTest:26 - -------Registering Details ----------
+2026-04-16 12:52:04 INFO  AccountRegisterTest:35 - -------click Privacy----------
+2026-04-16 12:52:04 INFO  AccountRegisterTest:37 - -------click Continue----------
+2026-04-16 12:56:15 INFO  AccountRegisterTest:16 - -------AccountTest Started----------
+2026-04-16 12:56:15 INFO  AccountRegisterTest:20 - -------click Account----------
+2026-04-16 12:56:15 INFO  AccountRegisterTest:22 - -------click Register----------
+2026-04-16 12:56:16 INFO  AccountRegisterTest:26 - -------Registering Details ----------
+2026-04-16 12:56:17 INFO  AccountRegisterTest:35 - -------click Privacy----------
+2026-04-16 12:56:18 INFO  AccountRegisterTest:37 - -------click Continue----------
+2026-04-16 21:49:08 INFO  AccountRegisterTest:16 - -------AccountTest Started----------
+2026-04-16 21:49:08 INFO  AccountRegisterTest:20 - -------click Account----------
+2026-04-16 21:49:08 INFO  AccountRegisterTest:22 - -------click Register----------
+2026-04-16 21:49:09 INFO  AccountRegisterTest:26 - -------Registering Details ----------
+2026-04-16 21:49:11 INFO  AccountRegisterTest:35 - -------click Privacy----------
+2026-04-16 21:49:11 INFO  AccountRegisterTest:37 - -------click Continue----------
+2026-04-16 22:03:10 INFO  AccountRegisterTest:16 - -------AccountTest Started----------
+2026-04-16 22:03:10 INFO  AccountRegisterTest:20 - -------click Account----------
+2026-04-16 22:03:10 INFO  AccountRegisterTest:22 - -------click Register----------
+2026-04-16 22:03:11 INFO  AccountRegisterTest:26 - -------Registering Details ----------
+2026-04-16 22:03:12 INFO  AccountRegisterTest:35 - -------click Privacy----------
+2026-04-16 22:03:12 INFO  AccountRegisterTest:37 - -------click Continue----------
+2026-04-16 22:07:46 INFO  AccountRegisterTest:16 - -------AccountTest Started----------
+2026-04-16 22:07:46 INFO  AccountRegisterTest:20 - -------click Account----------
+2026-04-16 22:07:46 INFO  AccountRegisterTest:22 - -------click Register----------
+2026-04-16 22:07:47 INFO  AccountRegisterTest:26 - -------Registering Details ----------
+2026-04-16 22:07:49 INFO  AccountRegisterTest:35 - -------click Privacy----------
+2026-04-16 22:07:49 INFO  AccountRegisterTest:37 - -------click Continue----------
+2026-04-16 22:12:11 INFO  Utils:112 - [TestNG] Running:
+  C:\Automation\EcomFramework\OpenCartAutomation\opencart\extentreport.xml
+
+2026-04-16 22:12:14 INFO  AccountRegisterTest:16 - -------AccountTest Started----------
+2026-04-16 22:12:14 INFO  AccountRegisterTest:20 - -------click Account----------
+2026-04-16 22:12:15 INFO  AccountRegisterTest:22 - -------click Register----------
+2026-04-16 22:12:15 INFO  AccountRegisterTest:26 - -------Registering Details ----------
+2026-04-16 22:12:17 INFO  AccountRegisterTest:35 - -------click Privacy----------
+2026-04-16 22:12:17 INFO  AccountRegisterTest:37 - -------click Continue----------
