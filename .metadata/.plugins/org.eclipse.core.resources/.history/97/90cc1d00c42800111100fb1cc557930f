@@ -1,0 +1,67 @@
+package testCases;
+
+import java.time.Duration;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import pageObjects.AccountRegisterationPage;
+import pageObjects.HomePage;
+
+public class AccountRegisterTest {
+	
+	
+	WebDriver d;
+	@BeforeClass
+	public void setup()
+	{
+		d=new ChromeDriver();
+		d.manage().deleteAllCookies();
+		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		d.get("https://tutorialsninja.com/demo/");
+		d.manage().window().maximize();
+	}
+	
+	@Test
+	
+	public void AccountRegisterTest()
+	{
+		HomePage hp=new HomePage(d);
+		hp.clickMyAccount();
+		hp.clickRegister();
+		
+		AccountRegisterationPage AR=new AccountRegisterationPage(d);
+		AR.setFirstName("Ramees");
+		AR.setLastName("KS");
+		AR.setEmail("ramiramiz@gmail.com");
+		AR.setEmail("99099090909");
+		AR.setPassword("123456789");
+		AR.setPasswordConfirm("123456789");
+		AR.clickPrivacy();
+		AR.clickContinue();
+		String actualmsg=AR.getSuccessVerify();
+		if(actualmsg.equals( "Your Account Has Been Created!"))
+		{
+			Assert.assertTrue(true);
+		}
+		else
+		{
+			Assert.fail();
+		}	
+	}
+	@AfterClass
+	public void tearDown()
+	{
+		d.quit();
+	}
+	
+//	public String randomString()
+//	{
+//		String randomAlpa=RandomStringUtils.randomAlphabetic(5);
+//		return randomAlpa;
+//	}
+	
+}
