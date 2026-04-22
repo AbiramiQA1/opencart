@@ -68,21 +68,21 @@ public class ExtentReportManager implements ITestListener {
 
 	public void onTestSuccess(ITestResult result) {
 	
-		test = extent.createTest(result.getTestClass().getName());
+		test = extent.createTest(result.getMethod().getMethodName());
 		test.assignCategory(result.getMethod().getGroups()); // to display groups in report
 		test.log(Status.PASS,result.getName()+" got successfully executed");
 		
 	}
 
 	public void onTestFailure(ITestResult result) {
-		test = extent.createTest(result.getTestClass().getName());
+		test = extent.createTest(result.getMethod().getMethodName());
 		test.assignCategory(result.getMethod().getGroups());
 		
 		test.log(Status.FAIL,result.getName()+" got failed");
 		test.log(Status.INFO, result.getThrowable().getMessage());
 		
 		try {
-			String imgPath = new BaseClass().captureScreen(result.getName());
+			String imgPath = BaseClass.captureScreen(result.getName());
 			test.addScreenCaptureFromPath(imgPath);
 			
 		} catch (Exception e1) {
@@ -91,7 +91,7 @@ public class ExtentReportManager implements ITestListener {
 	}
 
 	public void onTestSkipped(ITestResult result) {
-		test = extent.createTest(result.getTestClass().getName());
+		test = extent.createTest(result.getMethod().getMethodName());
 		test.assignCategory(result.getMethod().getGroups());
 		test.log(Status.SKIP, result.getName()+" got skipped");
 		test.log(Status.INFO, result.getThrowable().getMessage());

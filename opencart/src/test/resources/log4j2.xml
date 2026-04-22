@@ -38,7 +38,7 @@
         <Root level="INFO">
             <!-- Enable this if you want console logs -->
             <!-- <AppenderRef ref="Console"/> -->
-            <AppenderRef ref="File"/>
+            <AppenderRef ref="Console"/>
         </Root>
 
     </Loggers>

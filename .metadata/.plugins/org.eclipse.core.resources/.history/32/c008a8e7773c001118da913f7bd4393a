@@ -1,0 +1,19 @@
+package testCases;
+
+import pageObjects.Searchpage;
+import testBase.BaseClass;
+
+public class SearchTest extends BaseClass{
+	
+	
+	public void Search()
+	{
+		Searchpage sp=new Searchpage(d);
+		sp.setSearchTextBox("mac");
+		sp.clickSearchIcon();
+		
+	}
+	
+	
+
+}

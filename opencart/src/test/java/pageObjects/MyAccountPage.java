@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,24 +12,29 @@ public class MyAccountPage extends BasePage{
 		super(d);
 	}
 	
-	@FindBy(xpath="//h2[normalize-space()='My Account']")
+	@FindBy(xpath="//h1[normalize-space()='My Account']")
 	WebElement myaccount;
 	
     
-    @FindBy(xpath="//a[@class='list-group-item'][normalize-space()='Logout']")
+	@FindBy(xpath="//a[@class='dropdown-item'][normalize-space()='Logout']")
     WebElement Logout;
 	
-    public boolean MyAccountDisplayed() {
-        try {
-        	boolean exp=myaccount.isDisplayed();
-            return exp;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-	public void ClickLogout()
+    public boolean myAccountDisplayed()
     {
-    	Logout.click();
+    	try
+    	{
+    	 return myaccount.isDisplayed();
+    		
+    	}
+    	catch(Exception e)
+    	{
+    		return false;
+    	}
+    }
+	public void clickLogout()
+    {
+    	JavascriptExecutor js=(JavascriptExecutor)d;
+    	js.executeScript("arguments[0].click();",Logout );
     }
 
 }

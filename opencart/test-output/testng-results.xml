@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="4" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-16T22:12:11 IST" name="Suite" finished-at="2026-04-16T22:12:26 IST" duration-ms="15658">
+  <suite started-at="2026-04-22T12:35:26 IST" name="Suite" finished-at="2026-04-22T12:35:53 IST" duration-ms="27054">
     <groups>
-      <group name="Master">
-        <method signature="AccountRegisterTest.AccountTest()[pri:0, instance:testCases.AccountRegisterTest@333dd51e]" name="AccountTest" class="testCases.AccountRegisterTest"/>
-        <method signature="LoginTest.Login()[pri:0, instance:testCases.LoginTest@68fa0ba8]" name="Login" class="testCases.LoginTest"/>
-      </group> <!-- Master -->
-      <group name="Sanity">
-        <method signature="AccountRegisterTest.AccountTest()[pri:0, instance:testCases.AccountRegisterTest@333dd51e]" name="AccountTest" class="testCases.AccountRegisterTest"/>
-      </group> <!-- Sanity -->
-      <group name="Regression">
-        <method signature="LoginTest.Login()[pri:0, instance:testCases.LoginTest@68fa0ba8]" name="Login" class="testCases.LoginTest"/>
-      </group> <!-- Regression -->
     </groups>
-    <test started-at="2026-04-16T22:12:11 IST" name="ChromeTest" finished-at="2026-04-16T22:12:26 IST" duration-ms="15658">
-      <class name="testCases.AccountRegisterTest">
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.AccountRegisterTest@333dd51e]" started-at="2026-04-16T22:12:11 IST" name="setup" finished-at="2026-04-16T22:12:14 IST" duration-ms="3369" status="PASS">
+    <test started-at="2026-04-22T12:35:26 IST" name="ChromeTest" finished-at="2026-04-22T12:35:53 IST" duration-ms="27054">
+      <class name="testCases.EndToEndTest">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.EndToEndTest@78365cfa]" started-at="2026-04-22T12:35:26 IST" name="setup" finished-at="2026-04-22T12:35:29 IST" duration-ms="2910" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -33,41 +23,107 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="AccountTest()[pri:0, instance:testCases.AccountRegisterTest@333dd51e]" started-at="2026-04-16T22:12:14 IST" name="AccountTest" finished-at="2026-04-16T22:12:20 IST" duration-ms="5517" status="PASS">
+        <test-method signature="accountRegistrationTest()[pri:1, instance:testCases.EndToEndTest@78365cfa]" started-at="2026-04-22T12:35:29 IST" name="accountRegistrationTest" finished-at="2026-04-22T12:35:32 IST" duration-ms="3059" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AccountTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.AccountRegisterTest@333dd51e]" started-at="2026-04-16T22:12:20 IST" name="tearDown" finished-at="2026-04-16T22:12:20 IST" duration-ms="209" status="PASS">
+        </test-method> <!-- accountRegistrationTest -->
+        <test-method signature="logoutTest()[pri:2, instance:testCases.EndToEndTest@78365cfa]" started-at="2026-04-22T12:35:32 IST" name="logoutTest" finished-at="2026-04-22T12:35:33 IST" depends-on-methods="testCases.EndToEndTest.accountRegistrationTest" duration-ms="682" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutTest -->
+        <test-method signature="loginTest()[pri:3, instance:testCases.EndToEndTest@78365cfa]" started-at="2026-04-22T12:35:33 IST" name="loginTest" finished-at="2026-04-22T12:35:35 IST" depends-on-methods="testCases.EndToEndTest.logoutTest, testCases.EndToEndTest.accountRegistrationTest" duration-ms="2160" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method signature="searchAddProductTest()[pri:4, instance:testCases.EndToEndTest@78365cfa]" started-at="2026-04-22T12:35:35 IST" name="searchAddProductTest" finished-at="2026-04-22T12:35:38 IST" depends-on-methods="testCases.EndToEndTest.loginTest" duration-ms="3384" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchAddProductTest -->
+        <test-method signature="checkoutPageTest()[pri:5, instance:testCases.EndToEndTest@78365cfa]" started-at="2026-04-22T12:35:38 IST" name="checkoutPageTest" finished-at="2026-04-22T12:35:52 IST" depends-on-methods="testCases.EndToEndTest.searchAddProductTest" duration-ms="14009" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//button[@id='button-confirm']"}
+  (Session info: chrome=147.0.7727.102)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.41.0', revision: '9fc754f'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [37bedeeebeccd57ded2216c6ec8b8d1f, findElement {value=//button[@id='button-confirm'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\labir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50919}, goog:processID: 20280, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50919/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 37bedeeebeccd57ded2216c6ec8b8d1f]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@id='button-confirm']"}
+  (Session info: chrome=147.0.7727.102)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.41.0', revision: '9fc754f'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [37bedeeebeccd57ded2216c6ec8b8d1f, findElement {value=//button[@id='button-confirm'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\labir\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50919}, goog:processID: 20280, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50919/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 37bedeeebeccd57ded2216c6ec8b8d1f
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:604)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:427)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:421)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy30.getWrappedElement(Unknown Source)
+at org.openqa.selenium.remote.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:48)
+at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:533)
+at pageObjects.Checkoutpage.confirmOrderButton(Checkoutpage.java:142)
+at testCases.EndToEndTest.checkoutPageTest(EndToEndTest.java:107)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkoutPageTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.EndToEndTest@78365cfa]" started-at="2026-04-22T12:35:52 IST" name="tearDown" finished-at="2026-04-22T12:35:53 IST" duration-ms="267" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testCases.AccountRegisterTest -->
-      <class name="testCases.LoginTest">
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.LoginTest@68fa0ba8]" started-at="2026-04-16T22:12:20 IST" name="setup" finished-at="2026-04-16T22:12:23 IST" duration-ms="2577" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[window]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Login()[pri:0, instance:testCases.LoginTest@68fa0ba8]" started-at="2026-04-16T22:12:23 IST" name="Login" finished-at="2026-04-16T22:12:26 IST" duration-ms="3331" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.LoginTest@68fa0ba8]" started-at="2026-04-16T22:12:26 IST" name="tearDown" finished-at="2026-04-16T22:12:26 IST" duration-ms="208" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- testCases.LoginTest -->
+      </class> <!-- testCases.EndToEndTest -->
     </test> <!-- ChromeTest -->
   </suite> <!-- Suite -->
 </testng-results>

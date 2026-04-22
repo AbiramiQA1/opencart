@@ -1,0 +1,157 @@
+package pageObjects;
+
+import java.time.Duration;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Checkoutpage extends BasePage {
+	
+	public Checkoutpage(WebDriver d)
+	{
+		super(d);
+	}
+	
+	WebDriverWait wait=new WebDriverWait(d,Duration.ofSeconds(10));
+	
+	@FindBy(xpath="//input[@id='input-shipping-new']")
+	WebElement newAddress;
+	
+	@FindBy(xpath="//input[@id='input-shipping-firstname']")
+	WebElement firstname;
+	
+	@FindBy(xpath="//input[@id='input-shipping-lastname']")
+	WebElement lastname;
+	
+	@FindBy(xpath="//input[@id='input-shipping-address-1']")
+	WebElement address1;
+	
+	@FindBy(xpath="//input[@id='input-shipping-city']")
+	WebElement city;
+	
+	@FindBy(xpath="//input[@id='input-shipping-postcode']")
+	WebElement postalcode;
+	
+	
+	@FindBy(xpath="//select[@id='input-shipping-country']")
+	WebElement country;
+	
+	@FindBy(xpath="//select[@id='input-shipping-zone']")
+	WebElement state;
+
+	
+	@FindBy(xpath="//button[@id='button-shipping-address']")
+	WebElement continueButton;
+	
+	@FindBy(xpath="//button[@id='button-shipping-methods']")
+	WebElement shippingButton;
+	
+	@FindBy(xpath="//button[@id='button-shipping-method']")
+	WebElement shippingcontinuebutton;
+	
+	
+	@FindBy(xpath="//button[@id='button-payment-methods']")
+	WebElement paymentchooseButton;
+	
+	@FindBy(xpath="//button[@id='button-payment-method']")
+	WebElement paymentcontinuebutton;
+	
+	
+	@FindBy(xpath="//button[@id='button-confirm']")
+	WebElement confirmButton;
+	
+	@FindBy(xpath="//h1[normalize-space()='Your order has been placed!']")
+	WebElement orderVerifymsg;
+	
+	
+	public void setFirstName(String FirstName)
+	{
+		firstname.sendKeys(FirstName);
+	}
+	public void setLastName(String LastName)
+	{
+		lastname.sendKeys(LastName);
+	}
+
+	public void setAddress1(String Address1)
+	{
+		address1.sendKeys(Address1);
+	}
+	public void setCity(String City)
+	{
+		city.sendKeys(City);
+	}
+	public void setPostalCode(String PostalCode)
+	{
+		postalcode.sendKeys(PostalCode);
+	}
+	
+	public void selectCountry(String Countryname)
+	{
+		Select countrySelect=new Select(country);
+		countrySelect.selectByVisibleText(Countryname);
+	}
+	
+	public void selectState(String statename)
+	{
+		wait.until(ExpectedConditions.elementToBeClickable(state));
+		
+		wait.until(d -> {
+		    Select select = new Select(state);
+		    return select.getOptions().size() > 1;
+		});
+		Select stateSelect=new Select(state);
+		stateSelect.selectByVisibleText(statename);	
+		
+	}
+	public void clickContinue()
+	{
+		JavascriptExecutor js=(JavascriptExecutor)d;
+		js.executeScript("arguments[0].click();",continueButton );
+	}
+	public void shippingChooseButton()
+	{
+		JavascriptExecutor js=(JavascriptExecutor)d;
+		js.executeScript("arguments[0].click();", shippingButton);
+	}
+	public void shippingContinueButton()
+	{
+		JavascriptExecutor js=(JavascriptExecutor)d;
+		js.executeScript("arguments[0].click();", shippingcontinuebutton);
+	}
+	public void paymentChooseButton()
+	{
+		JavascriptExecutor js=(JavascriptExecutor)d;
+		js.executeScript("arguments[0].click();", paymentchooseButton);
+
+	}
+	public void paymentContinueButton()
+	{
+		JavascriptExecutor js=(JavascriptExecutor)d;
+		js.executeScript("arguments[0].click();", paymentcontinuebutton);
+
+	}
+	public void confirmOrderButton()
+	{
+		JavascriptExecutor js=(JavascriptExecutor)d;
+		js.executeScript("arguments[0].click();", confirmButton);
+	}
+	public String orderPlacedVerify()
+	{
+		try
+		{
+		return orderVerifymsg.getText();
+		}
+		catch(Exception e)
+		{
+			return e.getMessage();
+		}
+	}
+	
+  
+}

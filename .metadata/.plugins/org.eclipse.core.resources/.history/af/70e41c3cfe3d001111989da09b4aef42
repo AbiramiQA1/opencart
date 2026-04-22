@@ -1,0 +1,61 @@
+package pageObjects;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class HomePage extends BasePage{
+	
+	
+	public HomePage(WebDriver d)
+	{
+		super(d);
+	}
+	
+	WebDriverWait w=new WebDriverWait(d,Duration.ofSeconds(10));
+	
+	
+	@FindBy(xpath="//span[normalize-space()='My Account']")
+	WebElement myaccount;
+	
+	@FindBy(xpath="//a[normalize-space()='Register']")
+	WebElement Register;
+	
+	@FindBy(xpath="//a[@class='dropdown-item'][normalize-space()='Login']")
+	WebElement Login;
+	
+	@FindBy(xpath="//div[@class='dropdown d-grid']")
+	WebElement minicart;
+   
+	@FindBy(xpath="//strong[normalize-space()='Checkout']")
+	WebElement checkout;
+	
+	public void clickMyAccount()
+	{
+		myaccount.click();
+	}
+	public void clickRegister()
+	{
+		Register.click();
+	}
+	
+	public void clickLogin()
+	{
+		Login.click();
+	}
+	
+	public void clickMinicart()
+	{
+		w.until(ExpectedConditions.elementToBeClickable(minicart)).click();
+	}
+	
+	public void clickCheckout()
+	{
+		checkout.click();
+	}
+
+}

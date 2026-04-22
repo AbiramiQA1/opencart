@@ -22,7 +22,7 @@ public class LoginTest extends BaseClass {
 		l.clickLoginBtton();
 		
 		MyAccountPage ma=new MyAccountPage(d);
-		boolean targetpage=ma.MyAccountDisplayed();
+		boolean targetpage=ma.myAccountDisplayed();
 		if(targetpage==true)
 		{
 			System.out.println("Account login is successful");

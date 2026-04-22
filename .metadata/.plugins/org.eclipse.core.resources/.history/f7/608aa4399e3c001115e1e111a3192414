@@ -1,0 +1,27 @@
+package testCases;
+
+import org.testng.annotations.Test;
+
+import pageObjects.ProductPage;
+import pageObjects.Searchpage;
+import testBase.BaseClass;
+
+public class EndToEndTest extends BaseClass{
+	
+	@Test
+	public void search()
+	{
+		Searchpage sp=new Searchpage(d);
+		sp.setSearchTextBox("mac");
+		sp.clickSearchIcon();
+		
+	}
+	@Test(dependsOnMethods="search")
+	public void productselect()
+	{
+		ProductPage pp=new ProductPage(d);
+		pp.clickProduct();
+	}
+	
+
+}

@@ -1,0 +1,35 @@
+package pageObjects;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class ProductPage extends BasePage{
+	
+	public ProductPage(WebDriver d)
+	{
+		super(d);
+	}
+
+	WebDriverWait w=new WebDriverWait(d,Duration.ofSeconds(10));
+	@FindBy(xpath="//img[@title='MacBook Air']")
+	WebElement MacBookAir;
+	
+	@FindBy(xpath="//div[@id='product-info']//h1")
+	WebElement ProductTitle;
+	
+	public void clickProduct()
+	{
+		w.until(ExpectedConditions.elementToBeClickable(MacBookAir));
+	}
+	
+	public void productTitle()
+	{
+		
+	}
+}

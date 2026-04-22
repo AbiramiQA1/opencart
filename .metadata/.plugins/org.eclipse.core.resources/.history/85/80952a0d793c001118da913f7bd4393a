@@ -1,0 +1,11 @@
+package testCases;
+
+import pageObjects.ProductPage;
+import testBase.BaseClass;
+
+public class Productpagetest extends BaseClass {
+	
+	
+	
+
+}

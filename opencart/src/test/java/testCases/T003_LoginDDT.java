@@ -27,7 +27,7 @@ public class T003_LoginDDT extends BaseClass {
 			lp.clickLoginBtton();
 			logger.info("-----Test LoginPage completed ------");
 			MyAccountPage ma=new MyAccountPage(d);
-			boolean target=ma.MyAccountDisplayed();
+			boolean target=ma.myAccountDisplayed();
 		
 			
 			//1. data --->valid ---login success --->test pass(logout)
@@ -37,7 +37,7 @@ public class T003_LoginDDT extends BaseClass {
 			{
 			  if(target==true)
 			  {
-				  ma.ClickLogout();
+				  ma.clickLogout();
 				  Assert.assertTrue(true);
 			  }
 			  else
@@ -49,7 +49,7 @@ public class T003_LoginDDT extends BaseClass {
 			{
 				if(target==true)
 				{
-					ma.ClickLogout();
+					ma.clickLogout();
 					Assert.assertTrue(false);
 				}
 				else

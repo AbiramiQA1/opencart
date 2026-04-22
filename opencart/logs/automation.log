@@ -1,39 +1,75 @@
-2026-04-16 12:52:02 INFO  AccountRegisterTest:16 - -------AccountTest Started----------
-2026-04-16 12:52:02 INFO  AccountRegisterTest:20 - -------click Account----------
-2026-04-16 12:52:02 INFO  AccountRegisterTest:22 - -------click Register----------
-2026-04-16 12:52:03 INFO  AccountRegisterTest:26 - -------Registering Details ----------
-2026-04-16 12:52:04 INFO  AccountRegisterTest:35 - -------click Privacy----------
-2026-04-16 12:52:04 INFO  AccountRegisterTest:37 - -------click Continue----------
-2026-04-16 12:56:15 INFO  AccountRegisterTest:16 - -------AccountTest Started----------
-2026-04-16 12:56:15 INFO  AccountRegisterTest:20 - -------click Account----------
-2026-04-16 12:56:15 INFO  AccountRegisterTest:22 - -------click Register----------
-2026-04-16 12:56:16 INFO  AccountRegisterTest:26 - -------Registering Details ----------
-2026-04-16 12:56:17 INFO  AccountRegisterTest:35 - -------click Privacy----------
-2026-04-16 12:56:18 INFO  AccountRegisterTest:37 - -------click Continue----------
-2026-04-16 21:49:08 INFO  AccountRegisterTest:16 - -------AccountTest Started----------
-2026-04-16 21:49:08 INFO  AccountRegisterTest:20 - -------click Account----------
-2026-04-16 21:49:08 INFO  AccountRegisterTest:22 - -------click Register----------
-2026-04-16 21:49:09 INFO  AccountRegisterTest:26 - -------Registering Details ----------
-2026-04-16 21:49:11 INFO  AccountRegisterTest:35 - -------click Privacy----------
-2026-04-16 21:49:11 INFO  AccountRegisterTest:37 - -------click Continue----------
-2026-04-16 22:03:10 INFO  AccountRegisterTest:16 - -------AccountTest Started----------
-2026-04-16 22:03:10 INFO  AccountRegisterTest:20 - -------click Account----------
-2026-04-16 22:03:10 INFO  AccountRegisterTest:22 - -------click Register----------
-2026-04-16 22:03:11 INFO  AccountRegisterTest:26 - -------Registering Details ----------
-2026-04-16 22:03:12 INFO  AccountRegisterTest:35 - -------click Privacy----------
-2026-04-16 22:03:12 INFO  AccountRegisterTest:37 - -------click Continue----------
-2026-04-16 22:07:46 INFO  AccountRegisterTest:16 - -------AccountTest Started----------
-2026-04-16 22:07:46 INFO  AccountRegisterTest:20 - -------click Account----------
-2026-04-16 22:07:46 INFO  AccountRegisterTest:22 - -------click Register----------
-2026-04-16 22:07:47 INFO  AccountRegisterTest:26 - -------Registering Details ----------
-2026-04-16 22:07:49 INFO  AccountRegisterTest:35 - -------click Privacy----------
-2026-04-16 22:07:49 INFO  AccountRegisterTest:37 - -------click Continue----------
-2026-04-16 22:12:11 INFO  Utils:112 - [TestNG] Running:
+2026-04-22 09:09:51 INFO  Utils:112 - [TestNG] Running:
   C:\Automation\EcomFramework\OpenCartAutomation\opencart\extentreport.xml
 
-2026-04-16 22:12:14 INFO  AccountRegisterTest:16 - -------AccountTest Started----------
-2026-04-16 22:12:14 INFO  AccountRegisterTest:20 - -------click Account----------
-2026-04-16 22:12:15 INFO  AccountRegisterTest:22 - -------click Register----------
-2026-04-16 22:12:15 INFO  AccountRegisterTest:26 - -------Registering Details ----------
-2026-04-16 22:12:17 INFO  AccountRegisterTest:35 - -------click Privacy----------
-2026-04-16 22:12:17 INFO  AccountRegisterTest:37 - -------click Continue----------
+2026-04-22 09:13:20 INFO  Utils:112 - [TestNG] Running:
+  C:\Automation\EcomFramework\OpenCartAutomation\opencart\extentreport.xml
+
+2026-04-22 09:15:35 INFO  Utils:112 - [TestNG] Running:
+  C:\Automation\EcomFramework\OpenCartAutomation\opencart\extentreport.xml
+
+2026-04-22 09:16:34 INFO  Utils:112 - [TestNG] Running:
+  C:\Automation\EcomFramework\OpenCartAutomation\opencart\extentreport.xml
+
+2026-04-22 09:21:13 INFO  Utils:112 - [TestNG] Running:
+  C:\Automation\EcomFramework\OpenCartAutomation\opencart\extentreport.xml
+
+2026-04-22 10:52:47 INFO  Utils:112 - [TestNG] Running:
+  C:\Automation\EcomFramework\OpenCartAutomation\opencart\extentreport.xml
+
+2026-04-22 10:54:32 INFO  Utils:112 - [TestNG] Running:
+  C:\Automation\EcomFramework\OpenCartAutomation\opencart\extentreport.xml
+
+2026-04-22 10:55:16 INFO  Utils:112 - [TestNG] Running:
+  C:\Automation\EcomFramework\OpenCartAutomation\opencart\extentreport.xml
+
+2026-04-22 10:59:13 INFO  Utils:112 - [TestNG] Running:
+  C:\Automation\EcomFramework\OpenCartAutomation\opencart\extentreport.xml
+
+2026-04-22 11:29:33 INFO  Utils:112 - [TestNG] Running:
+  C:\Automation\EcomFramework\OpenCartAutomation\opencart\extentreport.xml
+
+2026-04-22 11:36:33 INFO  Utils:112 - [TestNG] Running:
+  C:\Automation\EcomFramework\OpenCartAutomation\opencart\extentreport.xml
+
+2026-04-22 11:52:30 INFO  Utils:112 - [TestNG] Running:
+  C:\Automation\EcomFramework\OpenCartAutomation\opencart\extentreport.xml
+
+2026-04-22 11:53:02 INFO  Utils:112 - [TestNG] Running:
+  C:\Automation\EcomFramework\OpenCartAutomation\opencart\extentreport.xml
+
+2026-04-22 11:53:08 INFO  EndToEndTest:26 - ===== Starting E2E Test =====
+2026-04-22 11:53:08 INFO  EndToEndTest:27 - Navigating to Registration Page
+2026-04-22 11:53:12 INFO  EndToEndTest:49 - Navigating to Logout Page
+2026-04-22 11:53:12 INFO  EndToEndTest:57 - Navigating to Login Page
+2026-04-22 11:55:48 INFO  Utils:112 - [TestNG] Running:
+  C:\Automation\EcomFramework\OpenCartAutomation\opencart\extentreport.xml
+
+2026-04-22 11:55:51 INFO  EndToEndTest:26 - ===== Starting E2E Test =====
+2026-04-22 11:55:51 INFO  EndToEndTest:27 - Navigating to Registration Page
+2026-04-22 11:55:54 INFO  EndToEndTest:49 - Navigating to Logout Page
+2026-04-22 11:55:55 INFO  EndToEndTest:57 - Navigating to Login Page
+2026-04-22 11:57:02 INFO  Utils:112 - [TestNG] Running:
+  C:\Automation\EcomFramework\OpenCartAutomation\opencart\extentreport.xml
+
+2026-04-22 11:57:06 INFO  EndToEndTest:26 - ===== Starting E2E Test =====
+2026-04-22 11:57:06 INFO  EndToEndTest:27 - Navigating to Registration Page
+2026-04-22 11:57:09 INFO  EndToEndTest:49 - Navigating to Logout Page
+2026-04-22 11:57:10 INFO  EndToEndTest:57 - Navigating to Login Page
+2026-04-22 12:02:19 INFO  Utils:112 - [TestNG] Running:
+  C:\Automation\EcomFramework\OpenCartAutomation\opencart\extentreport.xml
+
+2026-04-22 12:02:22 INFO  EndToEndTest:26 - ===== Starting E2E Test =====
+2026-04-22 12:02:22 INFO  EndToEndTest:27 - Navigating to Registration Page
+2026-04-22 12:02:26 INFO  EndToEndTest:49 - Navigating to Logout Page
+2026-04-22 12:02:27 INFO  EndToEndTest:57 - Navigating to Login Page
+2026-04-22 12:03:18 INFO  Utils:112 - [TestNG] Running:
+  C:\Automation\EcomFramework\OpenCartAutomation\opencart\extentreport.xml
+
+2026-04-22 12:03:21 INFO  EndToEndTest:26 - ===== Starting E2E Test =====
+2026-04-22 12:03:21 INFO  EndToEndTest:27 - Navigating to Registration Page
+2026-04-22 12:03:24 INFO  EndToEndTest:49 - Navigating to Logout Page
+2026-04-22 12:03:25 INFO  EndToEndTest:57 - Navigating to Login Page
+2026-04-22 12:03:27 INFO  EndToEndTest:74 - Navigating to searchProduct Page
+2026-04-22 12:03:28 INFO  EndToEndTest:78 - Navigating to Product Page
+2026-04-22 12:03:32 INFO  EndToEndTest:93 - Navigating to checkout Page
+2026-04-22 12:03:39 INFO  EndToEndTest:110 - ===== E2E Test Completed =====

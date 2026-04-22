@@ -1,0 +1,15 @@
+package testCases;
+
+import pageObjects.ProductPage;
+import testBase.BaseClass;
+
+public class ProductpageTest extends BaseClass {
+	
+	
+	public void productselect()
+	{
+		ProductPage pp=new ProductPage(d);
+		pp.ClickProduct();
+	}
+
+}

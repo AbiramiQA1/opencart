@@ -1,23 +1,29 @@
 package pageObjects;
 
+
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+
 public class LoginPage extends BasePage {
 
+	
 	public LoginPage(WebDriver d)
 	{
 		super(d);
+		
 	}
-	
+		
 	@FindBy(xpath="//input[@id='input-email']")
 	WebElement Email;
 	
 	@FindBy(xpath="//input[@id='input-password']")
 	WebElement Password;
 	
-	@FindBy(xpath="//input[@value='Login']")
+	@FindBy(xpath="//div[@class='text-end']//button")
 	WebElement LoginButton;
 	
 	
@@ -32,6 +38,7 @@ public class LoginPage extends BasePage {
 	}
 	public void clickLoginBtton()
 	{
-		LoginButton.click();
+		JavascriptExecutor js=(JavascriptExecutor)d;
+    	js.executeScript("arguments[0].click();",LoginButton);
 	}
 }

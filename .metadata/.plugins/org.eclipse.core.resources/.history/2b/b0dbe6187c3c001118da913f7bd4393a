@@ -1,0 +1,17 @@
+package testCases;
+
+import org.testng.annotations.Test;
+
+import pageObjects.ProductPage;
+import testBase.BaseClass;
+
+public class ProductpageTest extends BaseClass {
+	
+	@Test(dependsOnMethods="search")
+	public void productselect()
+	{
+		ProductPage pp=new ProductPage(d);
+		pp.ClickProduct();
+	}
+
+}

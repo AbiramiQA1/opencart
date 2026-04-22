@@ -1,0 +1,22 @@
+package testCases;
+
+import org.openqa.selenium.WebDriver;
+
+import pageObjects.Searchpage;
+import testBase.BaseClass;
+
+public class SearchTest extends BaseClass{
+	
+    WebDriver d;
+	
+	public void Search()
+	{
+		Searchpage sp=new Searchpage(d);
+		sp.setSearchTextBox("mac");
+		sp.clickSearchIcon();
+		
+	}
+	
+	
+
+}

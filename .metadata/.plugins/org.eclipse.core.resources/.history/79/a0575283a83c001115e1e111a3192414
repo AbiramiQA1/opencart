@@ -1,0 +1,36 @@
+package pageObjects;
+
+import static org.testng.Assert.assertEquals;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.testng.asserts.SoftAssert;
+
+public class MyAccountPage extends BasePage{
+	
+	public  MyAccountPage(WebDriver d)
+	{
+		super(d);
+	}
+	
+	@FindBy(xpath="//div[@id=\"common-success\"]//h1")
+	WebElement myaccount;
+	
+    
+    @FindBy(xpath="//a[@class='list-group-item'][normalize-space()='Logout']")
+    WebElement Logout;
+	
+    public void getConfirMsg()
+    {
+    	String verify=myaccount.getText();
+    	SoftAssert a=new SoftAssert();
+    	a.assertEquals(verify, "Your Account Has Been Created!");
+    	a.assertAll();
+    }
+	public void clickLogout()
+    {
+    	Logout.click();
+    }
+
+}

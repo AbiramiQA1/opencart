@@ -1,0 +1,53 @@
+package testCases;
+
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import pageObjects.AccountRegisterationPage;
+import pageObjects.HomePage;
+import pageObjects.ProductPage;
+import pageObjects.Searchpage;
+import pageObjects.MyAccountPage;
+import testBase.BaseClass;
+
+public class EndToEndTest extends BaseClass{
+	
+	@Test
+	public void endtoendTest()
+	{
+		SoftAssert sa=new SoftAssert();
+		//Account Registration
+	    HomePage hp=new HomePage(d);
+        hp.clickMyAccount();
+        hp.clickRegister();
+        
+        AccountRegisterationPage ap=new AccountRegisterationPage(d);
+        ap.setFirstName(randomAlpha().toUpperCase());
+        ap.setLastName(randomAlpha().toUpperCase());
+        ap.setEmail(randomAlpha().toUpperCase()+"@gmail.com");
+        ap.setPassword("test123");
+        ap.clickPrivacy();
+        ap.clickContinue();
+        
+        MyAccountPage ap=new MyAccountPage(d);
+        
+        
+		
+	    @Test
+	   public void search()
+	   {
+		Searchpage sp=new Searchpage(d);
+		sp.setSearchTextBox("mac");
+		sp.clickSearchIcon();
+		
+	   }
+	  @Test(dependsOnMethods="search")
+	  public void productselect()
+	  {
+		ProductPage pp=new ProductPage(d);
+		pp.clickProduct();
+		pp.productTitle();
+	  }
+	
+
+}

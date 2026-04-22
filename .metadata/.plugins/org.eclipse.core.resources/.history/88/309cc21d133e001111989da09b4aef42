@@ -1,0 +1,108 @@
+package testCases;
+
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import pageObjects.AccountRegisterationPage;
+import pageObjects.Checkoutpage;
+import pageObjects.HomePage;
+import pageObjects.LoginPage;
+import pageObjects.ProductPage;
+import pageObjects.Searchpage;
+import pageObjects.MyAccountPage;
+
+import testBase.BaseClass;
+
+public class EndToEndTest extends BaseClass{
+	
+	SoftAssert sa=new SoftAssert();
+	
+	@Test
+	public void accountRegistrationTest()
+	{
+		 logger.info("===== Starting E2E Test =====");
+		 logger.info("Navigating to Registration Page");
+		 
+	    static HomePage hp=new HomePage(d);
+        hp.clickMyAccount();
+        hp.clickRegister();
+        
+        AccountRegisterationPage ap=new AccountRegisterationPage(d);
+        ap.setFirstName(randomAlpha().toUpperCase());
+        ap.setLastName(randomAlpha().toUpperCase());
+        String email=randomAlpha().toUpperCase()+"@gmail.com";
+        ap.setEmail(email);
+        ap.setPassword("test123");
+        ap.clickPrivacy();
+        ap.clickContinue();      
+        String verify=ap.getSuccessVerify();
+        System.out.println(verify);
+        sa.assertEquals(verify,"Your Account Has Been Created!");
+	}
+	    
+	   @Test
+	   public void logoutTest()
+	   {
+		logger.info("Navigating to Logout Page");
+        MyAccountPage ma=new MyAccountPage(d);
+        ma.clickLogout();
+	   }
+
+        @Test
+        public void loginTest()
+        {
+        
+        hp.clickMyAccount();
+        hp.clickLogin();      
+        LoginPage lp=new LoginPage(d);
+        lp.setEmail(email);
+        lp.setPassword("test123");
+        lp.clickLoginBtton();
+        
+        //verify login successful myaccountpage
+        System.out.println("MyAccount Displaying "+ma.myAccountDisplayed());
+        sa.assertEquals(ma.myAccountDisplayed(), true);
+        }
+      //search product
+        @Test
+        public void searchAddProductTest()
+        {
+		Searchpage sp=new Searchpage(d);
+		sp.setSearchTextBox("mac");
+		sp.clickSearchIcon();
+		
+		ProductPage pp=new ProductPage(d);
+		pp.clickProduct();
+		String productname=pp.productTitle();
+		System.out.println(productname +" is selected");
+		sa.assertEquals(productname, "MacBook Air");
+		pp.productAddToCart();
+		
+		hp.clickMinicart();
+		hp.clickCheckout();
+        }
+		//checkout page
+        @Test
+        public void checkoutPageTest()
+        {
+		Checkoutpage cp=new Checkoutpage(d);
+		cp.setFirstName("Abirami");
+		cp.setLastName("L");
+		cp.setAddress1("Kristal");
+		cp.setCity("Kerala");
+		cp.setPostalCode("695582");
+		cp.selectCountry("India");
+		cp.selectState("Kerala");
+		cp.clickContinue();
+		cp.shippingChooseButton();
+		cp.shippingContinueButton();
+		cp.paymentChooseButton();
+		cp.paymentContinueButton();
+		cp.confirmOrderButton();
+		System.out.println("order status "+cp.orderPlacedVerify());
+		sa.assertEquals("Your order has been placed!", cp.orderPlacedVerify());
+		sa.assertAll();
+	  }
+	}
+
+

@@ -4,30 +4,21 @@
   <listeners>
     <listener class-name="utilities.ExtentReportManager"/>
   </listeners>
-  <test thread-count="5" name="firefoxTest(failed)">
-    <parameter name="os" value="Linux"/>
-    <parameter name="browser" value="firefox"/>
-    <classes>
-      <class name="testCases.LoginTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="setup"/>
-          <include name="Login"/>
-        </methods>
-      </class> <!-- testCases.LoginTest -->
-    </classes>
-  </test> <!-- firefoxTest(failed) -->
   <test thread-count="5" name="ChromeTest(failed)">
-    <parameter name="os" value="Linux"/>
+    <parameter name="os" value="window"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.LoginTest">
+      <class name="testCases.EndToEndTest">
         <methods>
+          <include name="logoutTest"/>
           <include name="tearDown"/>
+          <include name="checkoutPageTest"/>
+          <include name="loginTest"/>
           <include name="setup"/>
-          <include name="Login"/>
+          <include name="searchAddProductTest"/>
+          <include name="accountRegistrationTest"/>
         </methods>
-      </class> <!-- testCases.LoginTest -->
+      </class> <!-- testCases.EndToEndTest -->
     </classes>
   </test> <!-- ChromeTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

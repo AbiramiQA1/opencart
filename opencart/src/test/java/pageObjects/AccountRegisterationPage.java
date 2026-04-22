@@ -1,14 +1,17 @@
 package pageObjects;
-
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+
 public class AccountRegisterationPage extends BasePage {
 	
+
     public AccountRegisterationPage(WebDriver d)
     {
     	super(d);
+    	
     }
 	
     @FindBy(xpath="//input[@id='input-firstname']") 
@@ -24,8 +27,8 @@ public class AccountRegisterationPage extends BasePage {
     @FindBy(xpath="//input[@id='input-confirm']") 
     WebElement passwordConfirm;
     @FindBy(xpath="//input[@name='agree']")
-	WebElement privacyCheckbox;
-    @FindBy(xpath="//input[@value='Continue']")
+	WebElement privacytoggle;
+    @FindBy(xpath="//div[@class='text-end']//button")
    	WebElement continueButton;
     @FindBy(xpath="//h1[normalize-space()='Your Account Has Been Created!']")
    	WebElement SuccessVerify;
@@ -57,11 +60,15 @@ public class AccountRegisterationPage extends BasePage {
     }
     public void clickPrivacy()
     {
-    	privacyCheckbox.click();
+    	JavascriptExecutor js=(JavascriptExecutor)d;
+    	js.executeScript("arguments[0].scrollIntoView(true);",privacytoggle);
+    	js.executeScript("arguments[0].click();", privacytoggle);
     }
     public void clickContinue()
     {
-    	continueButton.click();
+    	JavascriptExecutor js=(JavascriptExecutor)d;
+    	js.executeScript("arguments[0].click();",continueButton);
+      //wait.until(ExpectedConditions.elementToBeClickable(continueButton)).click();
     }
     
     public String getSuccessVerify()

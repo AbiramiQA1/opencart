@@ -1,0 +1,91 @@
+package pageObjects;
+
+import java.time.Duration;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class AccountRegisterationPage extends BasePage {
+	
+	WebDriverWait wait;
+    public AccountRegisterationPage(WebDriver d)
+    {
+    	super(d);
+    	wait=new WebDriverWait(d,Duration.ofSeconds(10));
+    	
+    }
+	
+    @FindBy(xpath="//input[@id='input-firstname']") 
+    WebElement firstName;
+    @FindBy(xpath="//input[@id='input-lastname']") 
+    WebElement lastName;
+    @FindBy(xpath="//input[@id='input-email']")
+    WebElement eMail;
+    @FindBy(xpath="//input[@id='input-telephone']")
+    WebElement telephone;
+    @FindBy(xpath="//input[@id='input-password']") 
+    WebElement password;
+    @FindBy(xpath="//input[@id='input-confirm']") 
+    WebElement passwordConfirm;
+    @FindBy(xpath="//input[@name='agree']")
+	WebElement privacytoggle;
+    @FindBy(xpath="//button[@type='submit']")
+   	WebElement continueButton;
+    @FindBy(xpath="//h1[normalize-space()='Your Account Has Been Created!']")
+   	WebElement SuccessVerify;
+
+
+    public void setFirstName(String firstname)
+    {
+    	firstName.sendKeys(firstname);
+    }
+    public void setLastName(String lastname)
+    {
+    	lastName.sendKeys(lastname);
+    }
+    public void setEmail(String email)
+    {
+    	eMail.sendKeys(email);
+    }
+    public void setTelephone(String phone)
+    {
+    	telephone.sendKeys(phone);
+    }
+    public void setPassword(String pass)
+    {
+    	password.sendKeys(pass);
+    }
+    public void setPasswordConfirm(String passConfirm)
+    {
+    	passwordConfirm.sendKeys(passConfirm);
+    }
+    public void clickPrivacy()
+    {
+    	JavascriptExecutor js=(JavascriptExecutor)d;
+    	js.executeScript("arguments[0].scrollIntoView(true);",privacytoggle);
+    	js.executeScript("arguments[0].click();", privacytoggle);
+    }
+    public void clickContinue()
+    {
+      wait.until(ExpectedConditions.elementToBeClickable(continueButton));
+    }
+    
+    public String getSuccessVerify()
+    {
+    	try
+    	{
+    		return SuccessVerify.getText();
+    	}
+    	catch(Exception e)
+    	{
+    		return(e.getMessage());
+    	}
+    }
+    
+    
+
+}

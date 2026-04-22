@@ -1,0 +1,21 @@
+package testCases;
+
+import org.testng.annotations.Test;
+
+import pageObjects.Searchpage;
+import testBase.BaseClass;
+
+public class SearchTest extends BaseClass{
+	
+	@Test
+	public void search()
+	{
+		Searchpage sp=new Searchpage(d);
+		sp.setSearchTextBox("mac");
+		sp.clickSearchIcon();
+		
+	}
+	
+	
+
+}

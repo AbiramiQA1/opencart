@@ -1,0 +1,22 @@
+package pageObjects;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class Productpagetest extends BasePage{
+	
+	public Productpagetest(WebDriver d)
+	{
+		super(d);
+	}
+
+	
+	@FindBy(xpath="//img[@title='MacBook Air']")
+	WebElement MacBookAir;
+	
+	public void ClickProduct()
+	{
+		MacBookAir.click();
+	}
+}

@@ -1,8 +1,12 @@
 package pageObjects;
 
+
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 
 public class HomePage extends BasePage{
 	
@@ -12,18 +16,26 @@ public class HomePage extends BasePage{
 		super(d);
 	}
 	
+	
 	@FindBy(xpath="//span[normalize-space()='My Account']")
 	WebElement myaccount;
 	
 	@FindBy(xpath="//a[normalize-space()='Register']")
 	WebElement Register;
 	
-	@FindBy(xpath="//ul[@class='dropdown-menu dropdown-menu-right']//a[normalize-space()='Login']")
+	@FindBy(xpath="//a[@class='dropdown-item'][normalize-space()='Login']")
 	WebElement Login;
+	
+	@FindBy(xpath="//div[@class='dropdown d-grid']")
+	WebElement minicart;
    
+	@FindBy(xpath="//strong[normalize-space()='Checkout']")
+	WebElement checkout;
+	
 	public void clickMyAccount()
 	{
-		myaccount.click();
+		JavascriptExecutor js=(JavascriptExecutor)d;
+		js.executeScript("arguments[0].click();",myaccount );
 	}
 	public void clickRegister()
 	{
@@ -32,7 +44,20 @@ public class HomePage extends BasePage{
 	
 	public void clickLogin()
 	{
-		Login.click();
+		JavascriptExecutor js=(JavascriptExecutor)d;
+		js.executeScript("arguments[0].click();",Login );
+	}
+	
+	public void clickMinicart()
+	{
+		JavascriptExecutor js=(JavascriptExecutor)d;
+		js.executeScript("arguments[0].click();",minicart );
+	}
+	
+	public void clickCheckout()
+	{
+		JavascriptExecutor js=(JavascriptExecutor)d;
+		js.executeScript("arguments[0].click();",checkout );
 	}
 
 }

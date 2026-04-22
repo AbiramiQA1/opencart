@@ -1,0 +1,65 @@
+package testCases;
+
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import pageObjects.AccountRegisterationPage;
+import pageObjects.HomePage;
+import pageObjects.LoginPage;
+import pageObjects.ProductPage;
+import pageObjects.Searchpage;
+import pageObjects.MyAccountPage;
+
+import testBase.BaseClass;
+
+public class EndToEndTest extends BaseClass{
+	
+	@Test
+	public void endtoendTest()
+	{
+		SoftAssert sa=new SoftAssert();
+		//Account Registration
+	    HomePage hp=new HomePage(d);
+        hp.clickMyAccount();
+        hp.clickRegister();
+        
+        AccountRegisterationPage ap=new AccountRegisterationPage(d);
+        ap.setFirstName(randomAlpha().toUpperCase());
+        ap.setLastName(randomAlpha().toUpperCase());
+        String email=randomAlpha().toUpperCase()+"@gmail.com";
+        ap.setEmail(email);
+        ap.setPassword("test123");
+        ap.clickPrivacy();
+        ap.clickContinue();
+        
+        String verify=ap.getSuccessVerify();
+        System.out.println(verify);
+        sa.assertEquals(verify,"Your Account Has Been Created!");
+        
+        MyAccountPage ma=new MyAccountPage(d);
+        boolean myaccverify= ma.myAccountDisplayed();
+        sa.assertEquals(myaccverify, true);
+        ma.clickLogout();
+        
+       
+        //Login
+        
+        hp.clickMyAccount();
+        hp.clickLogin();      
+        LoginPage lp=new LoginPage(d);
+        lp.setEmail(email);
+        lp.setPassword("test123");
+        lp.clickLoginBtton();
+        
+        //search product
+		Searchpage sp=new Searchpage(d);
+		sp.setSearchTextBox("mac");
+		sp.clickSearchIcon();
+		ProductPage pp=new ProductPage(d);
+		pp.clickProduct();
+		String productname=pp.productTitle();
+		sa.assertEquals(productname, "MacBook Air");
+	  }
+	}
+
+
